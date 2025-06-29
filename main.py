@@ -60,9 +60,13 @@ else:
 
 # Výběr textu
 selection = input("Enter a number between 1 and 3 to select: ")
-selection = int(selection)
-if not 1 <= selection <= len(TEXTS):
-    print("Selected number is out of range.")
+try:
+    selection = int(selection)
+    if not 1 <= selection <= len(TEXTS):
+        print("Selected number is out of range.")
+        exit()
+except ValueError:
+    print("Invalid input! Please enter a number between 1 and 3.")
     exit()
 
 # Získání vybraného textu
@@ -70,7 +74,7 @@ text = TEXTS[selection - 1]
 words = text.split()
 
 # Úprava pro korektní počty a délky slov
-cleaned_words = [word.strip('.,') for word in words]
+cleaned_words = [word.strip('.,!?;:"\'()[]{}') for word in words]
 
 # Celkový počet slov
 word_count = len(cleaned_words)
