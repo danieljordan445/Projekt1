@@ -113,8 +113,3 @@ print("-" * 40)
 for length in sorted(lengths):
     stars = '*' * lengths[length]
     print(f"{length:>3}|{stars:<20}|{lengths[length]}")
-<<<<<<< HEAD
-    
-=======
-    
->>>>>>> 2694fa990135becd04cda83d1bf934eb21c8656d
